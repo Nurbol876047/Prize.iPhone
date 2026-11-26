@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЦифроЩит — учебный тренажёр против фишинга</title>
+<meta name="description" content="Образовательный проект о мошеннических «выигрышах» в интернете: интерактивный тренажёр и советы по защите данных. Неофициальный проект, вдохновлённый рекомендациями АФМ РК.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <div class="brand">
+      <svg class="shield" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4L41 11V22C41 33 34 40.5 24 44C14 40.5 7 33 7 22V11L24 4Z" fill="#142a6b"/>
+        <path d="M24 4L41 11V22C41 33 34 40.5 24 44V4Z" fill="#e7b531"/>
+      </svg>
+      ЦифроЩит
+      <span class="badge">учебный проект</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#demo">Демо-тренажёр</a>
+      <a href="#signs">Признаки фишинга</a>
+      <a href="#action">Если попались</a>
+      <a href="#about">О проекте</a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#demo">Демо-тренажёр</a>
+      <a href="#signs">Признаки фишинга</a>
+      <a href="#action">Если попались</a>
+      <a href="#about">О проекте</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>«Вы выиграли iPhone!» — <span>это мошенничество</span></h1>
+    <p class="lead">
+      Каждый день тысячи людей получают сообщения о крупных выигрышах, в которых
+      нужно просто «подтвердить получение» — указав номер карты и телефона.
+      Это классическая схема фишинга. Пройдите наш безопасный интерактивный
+      тренажёр, чтобы за минуту увидеть, как это работает, и научиться узнавать
+      обман с первого взгляда.
+    </p>
+    <div class="hero-actions">
+      <a href="#demo" class="btn btn-primary">Пройти демо-тренажёр</a>
+      <a href="#signs" class="btn btn-ghost">Признаки фишинга</a>
+    </div>
+    <p class="hero-note"><strong>Полностью безопасно:</strong> форма ничего никуда не отправляет и не сохраняет.</p>
+  </div>
+</section>
+
+<section class="demo-section" id="demo">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Интерактивная демонстрация</div>
+      <h2>Повторите путь жертвы мошенников</h2>
+      <p>Нажмите «Получить приз» и пройдите сценарий целиком — в конце вас ждёт разбор, почему это фишинг.</p>
+    </div>
+
+    <div class="demo-wrap">
+      <div class="phone-frame">
+        <div class="phone-screen" id="phoneScreen">
+
+          <div class="demo-card step-1 demo-step active" id="step1">
+            <div class="kicker">Учебный тренажёр по цифровой безопасности</div>
+            <h3>Поздравляем!<br>Вы выиграли iPhone 18 Pro Max!</h3>
+            <div class="prize-phone"></div>
+            <p class="hint">Пройдите учебный сценарий получения приза.</p>
+            <button class="btn btn-primary" id="toStep2">Получить приз</button>
+          </div>
+
+          <div class="demo-card step-2 demo-step" id="step2">
+            <div class="kicker">Учебный тренажёр по цифровой безопасности</div>
+            <h3>Поздравляем!<br>Вы выиграли iPhone 18 Pro Max!</h3>
+            <div class="field-note">Используются только заранее подготовленные вымышленные данные. Ничего не отправляется и не сохраняется.</div>
+            <form id="prizeForm">
+              <div class="field">
+                <label for="fio">ФИО</label>
+                <input type="text" id="fio" value="Тестовый Пользователь">
+              </div>
+              <div class="field">
+                <label for="phone">Номер телефона</label>
+                <input type="text" id="phone" value="+7 (000) 000-00-00">
+              </div>
+              <div class="field">
+                <label for="card">Номер банковской карты</label>
+                <input type="text" id="card" value="0000 0000 0000 0000">
+              </div>
+              <button type="submit" class="btn btn-primary">Подтвердить получение</button>
+            </form>
+          </div>
+
+          <div class="warning-overlay" id="warningOverlay">
+            <div class="warning-card">
+              <svg class="shield-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4L41 11V22C41 33 34 40.5 24 44C14 40.5 7 33 7 22V11L24 4Z" fill="#142a6b"/>
+                <path d="M24 4L41 11V22C41 33 34 40.5 24 44V4Z" fill="#e7b531"/>
+              </svg>
+              <div class="eyebrow-sm">Профилактика интернет-мошенничества</div>
+              <h4>Внимание!<br>Это признаки фишинга!</h4>
+              <p>Мошенники могут обещать дорогие подарки, чтобы получить ваши личные и банковские данные.</p>
+              <ul>
+                <li>Не доверяйте неожиданным выигрышам.</li>
+                <li>Не вводите реквизиты карты на подозрительных сайтах.</li>
+                <li>Никому не сообщайте PIN, CVV и коды из SMS.</li>
+              </ul>
+              <div class="official-cite">
+                <img src="assets/afm-logo.png" alt="Эмблема АФМ РК">
+                <div class="official"><strong>Официальная информация и рекомендации:</strong>Агентство по финансовому мониторингу Республики Казахстан</div>
+              </div>
+              <p class="fine-print">Учебный материал. Не является официальным сайтом АФМ РК. Данные не собираются.</p>
+              <button class="btn btn-primary" id="closeWarning">Понятно</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grid-section alt" id="signs">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Как распознать обман</div>
+      <h2>6 признаков фишингового сообщения</h2>
+      <p>Если вы видите хотя бы два пункта из списка — перед вами, скорее всего, мошенничество.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="info-card danger">
+        <div class="num">1</div>
+        <h3>Неожиданный выигрыш</h3>
+        <p>Вы получили приз в розыгрыше, в котором никогда не участвовали.</p>
+      </div>
+      <div class="info-card danger">
+        <div class="num">2</div>
+        <h3>Просьба ввести данные карты</h3>
+        <p>Для «получения» приза просят номер карты, срок действия, CVV или PIN — настоящим акциям это не нужно.</p>
+      </div>
+      <div class="info-card danger">
+        <div class="num">3</div>
+        <h3>Давление и спешка</h3>
+        <p>«Приз сгорит через 10 минут» — классический приём, чтобы вы не успели подумать.</p>
+      </div>
+      <div class="info-card danger">
+        <div class="num">4</div>
+        <h3>Странная ссылка</h3>
+        <p>Адрес сайта отличается от официального домена бренда или ведёт на незнакомый короткий линк.</p>
+      </div>
+      <div class="info-card danger">
+        <div class="num">5</div>
+        <h3>Просьба «оплатить доставку»</h3>
+        <p>Настоящий приз не требует предоплаты, комиссии или «налога на выигрыш».</p>
+      </div>
+      <div class="info-card danger">
+        <div class="num">6</div>
+        <h3>Запрос кода из SMS</h3>
+        <p>Код из смс — это ключ к вашему счёту. Его не спрашивают ни банки, ни организаторы акций.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grid-section" id="action">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Если данные уже введены</div>
+      <h2>Что делать прямо сейчас</h2>
+      <p>Чем быстрее вы отреагируете, тем меньше риск потерять деньги.</p>
+    </div>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div><strong>Заблокируйте карту</strong><span>Через приложение банка или по горячей линии — немедленно, не дожидаясь списаний.</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div><strong>Смените пароли</strong><span>Если вы вводили пароли от аккаунтов на подозрительном сайте — смените их везде, где они использовались.</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div><strong>Сообщите в банк</strong><span>Опишите ситуацию и попросите проверить счёт на подозрительную активность.</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div><strong>Подайте обращение в АФМ РК или полицию</strong><span>Зафиксируйте факт мошенничества официально — это поможет и другим людям.</span></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div><strong>Предупредите близких</strong><span>Мошенники нередко продолжают атаку от вашего имени через соцсети и мессенджеры.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="about">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Покажите этот тренажёр близким</h2>
+      <p>Чаще всего жертвами становятся те, кто не сталкивался с такими схемами раньше. Поделитесь ссылкой — это займёт у них одну минуту.</p>
+      <button class="btn btn-primary" id="shareBtn">Поделиться ссылкой</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-source">
+      <img src="assets/afm-logo.png" alt="Эмблема АФМ РК">
+      <div class="txt"><strong>Агентство по финансовому мониторингу РК</strong>Эмблема приведена для ссылки на официальный источник рекомендаций по кибербезопасности.</div>
+    </div>
+    <div class="footer-disclaimer">
+      Это некоммерческий образовательный проект. Мы не являемся официальным представителем
+      и не аффилированы с АФМ Республики Казахстан. Форма на этой странице — демонстрация:
+      она не отправляет и не сохраняет никакие введённые данные.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ЦифроЩит — учебный проект по цифровой безопасности</span>
+      <span>Сделано для повышения осведомлённости о фишинге</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Ссылка скопирована</div>
+
+<script src="script.js"></script>
+</body>
+</html>
