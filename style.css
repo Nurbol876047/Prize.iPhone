@@ -353,7 +353,7 @@ nav.main-nav a:hover { color: var(--ink); }
   opacity: 1;
 }
 
-.shield-icon { width: 46px; height: 46px; margin: 0 auto 10px; display: block; }
+.shield-icon { width: 46px; height: 46px; margin: 0 auto 10px; display: block; object-fit: contain; }
 
 .warning-card .eyebrow-sm {
   font-size: 11.5px;

@@ -73,29 +73,25 @@
         <div class="phone-screen" id="phoneScreen">
 
           <div class="demo-card step-1 demo-step active" id="step1">
-            <div class="kicker">Учебный тренажёр по цифровой безопасности</div>
             <h3>Поздравляем!<br>Вы выиграли iPhone 18 Pro Max!</h3>
             <div class="prize-phone"></div>
-            <p class="hint">Пройдите учебный сценарий получения приза.</p>
             <button class="btn btn-primary" id="toStep2">Получить приз</button>
           </div>
 
           <div class="demo-card step-2 demo-step" id="step2">
-            <div class="kicker">Учебный тренажёр по цифровой безопасности</div>
             <h3>Поздравляем!<br>Вы выиграли iPhone 18 Pro Max!</h3>
-            <div class="field-note">Используются только заранее подготовленные вымышленные данные. Ничего не отправляется и не сохраняется.</div>
             <form id="prizeForm">
               <div class="field">
                 <label for="fio">ФИО</label>
-                <input type="text" id="fio" value="Тестовый Пользователь">
+                <input type="text" id="fio" placeholder="Иванов Иван Иванович" required>
               </div>
               <div class="field">
                 <label for="phone">Номер телефона</label>
-                <input type="text" id="phone" value="+7 (000) 000-00-00">
+                <input type="text" id="phone" placeholder="+7 (___) ___-__-__" required>
               </div>
               <div class="field">
                 <label for="card">Номер банковской карты</label>
-                <input type="text" id="card" value="0000 0000 0000 0000">
+                <input type="text" id="card" placeholder="0000 0000 0000 0000" required>
               </div>
               <button type="submit" class="btn btn-primary">Подтвердить получение</button>
             </form>
@@ -103,10 +99,7 @@
 
           <div class="warning-overlay" id="warningOverlay">
             <div class="warning-card">
-              <svg class="shield-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 4L41 11V22C41 33 34 40.5 24 44C14 40.5 7 33 7 22V11L24 4Z" fill="#142a6b"/>
-                <path d="M24 4L41 11V22C41 33 34 40.5 24 44V4Z" fill="#e7b531"/>
-              </svg>
+              <img class="shield-icon" src="assets/afm-logo.png" alt="Эмблема АФМ РК">
               <div class="eyebrow-sm">Профилактика интернет-мошенничества</div>
               <h4>Внимание!<br>Это признаки фишинга!</h4>
               <p>Мошенники могут обещать дорогие подарки, чтобы получить ваши личные и банковские данные.</p>
